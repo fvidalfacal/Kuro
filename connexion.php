@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <?php
+    include('include/css.inc.html');
+    ?>
+    <title>Kuro - Authentification</title>
+
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="login-panel panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Connexion</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form role="form" action="authentification.php" method="post">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    </div>
+                                    <button class="btn btn-lg btn-success btn-block">Login
+                                </fieldset>
+                            </form>
+                            <?php
+                            if (isset($_SESSION['erreurConnexion'])) {
+                                echo 'Votre identifiant et/ou mot de passe sont érronés.';
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php
+        include('include/js.inc.html');
+        ?>
+
+    </body>
+
+</html>
